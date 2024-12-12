@@ -7,7 +7,7 @@ const Account = () => {
   return (
     <DashboardLayout>
         <>
-        <div className="flex gap-4 mt-5 min-h-screen flex-col-2 justify-center py-12 sm:px-6 lg:px-8">
+        <div className="flex gap-10 mt-2 min-h-full py-7 ">
           <UpdateInfo/>
           <UpdatePassword/>
         </div>
