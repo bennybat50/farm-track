@@ -76,18 +76,18 @@ const TestView = () => {
           <div className="flex-1 space-y-4">
             <h3 className="text-lg font-semibold">Nutrient Levels</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-              <label>Nitrogen <br /><b>0.0 mg/kg</b></label>
-              <label>Potassium <br /><b>0.0</b></label>
-              <label>Iron <br /><b>0.0</b></label>
-              <label>Manganese <br /><b>0.0</b></label>
-              <label>Boron <br /><b>0.0</b></label>
-              <label>Copper <br /><b>0.0</b></label>
-              <label>Zinc <br /><b>0.0</b></label>
-              <label>CEC <br /><b>0.0</b></label>
-              <label>Organic Matter <br /><b>0.0</b></label>
-              <label>C/N <br /><b>0.0</b></label>
-              <label>Texture <br /><b>0.0</b></label>
-              <label>Source <br /><b>0.0</b></label>
+              <label>Nitrogen <br /><b>4.6 mg/kg</b></label>
+              <label>Potassium <br /><b>6.4</b></label>
+              <label>Iron <br /><b>3.4</b></label>
+              <label>Manganese <br /><b>0.5</b></label>
+              <label>Boron <br /><b>0.05</b></label>
+              <label>Copper <br /><b>2.8</b></label>
+              <label>Zinc <br /><b>4.5</b></label>
+              <label>CEC <br /><b>2.2</b></label>
+              <label>Organic Matter <br /><b>9.2</b></label>
+              <label>C/N <br /><b>45.5</b></label>
+              <label>Texture <br /><b>89.4</b></label>
+              <label>Source <br /><b>34.6</b></label>
             </div>
           </div>
 
