@@ -27,7 +27,10 @@ const UpdateInfo = () => {
         />
        </div>
       </div>
-      <div>
+      
+
+       <div className='flex gap-2'>
+       <div>
        <label htmlFor="email" className="mt-4 block text-sm font-medium text-gray-700">
           Middle Name
         </label>
@@ -37,6 +40,18 @@ const UpdateInfo = () => {
           placeholder='optional'
         />
        </div>
+
+       <div>
+       <label htmlFor="email" className="mt-4 block text-sm font-medium text-gray-700">
+          NIN(Optional)
+        </label>
+        <input
+          type="email"
+          className="mt-1 block rounded-md border-gray-900 shadow-md focus:border-green-900 focus:ring-green-900 h-10 py-2 px-2 text-base"
+        />
+       </div>
+      </div>
+
       <div className='flex gap-2'>
        <div>
        <label htmlFor="email" className="mt-4 block text-sm font-medium text-gray-700">
