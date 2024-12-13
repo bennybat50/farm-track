@@ -25,6 +25,7 @@ const SoilTesterList = () => {
           "Authorization": `Bearer ${storedUser}`,
         },
       });
+      console.log(response.data.data);
       
       setSoilTesters(response.data.data);
     } catch (err) {

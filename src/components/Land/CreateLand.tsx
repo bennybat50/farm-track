@@ -160,8 +160,8 @@ const CreateLand: React.FC<CreateLandProps> = ({
   return (
     <div className="bg-white shadow-xl rounded-lg p-6 max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-        <Layers className="mr-3 text-green-600" />
-        Add New Land
+        <Layers className="mr-3 text-orange-600" />
+        Create a new plot
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -169,7 +169,7 @@ const CreateLand: React.FC<CreateLandProps> = ({
         <div className="flex items-center space-x-4">
           <div 
             onClick={() => fileInputRef.current?.click()}
-            className="relative w-full h-32 rounded-lg border-2 border-dashed border-green-300 flex items-center justify-center cursor-pointer hover:bg-green-50 transition"
+            className="relative w-full h-32 rounded-lg border-2 border-dashed border-orange-300 flex items-center justify-center cursor-pointer hover:bg-green-50 transition"
           >
             {imagePreview ? (
               <img 
@@ -179,8 +179,8 @@ const CreateLand: React.FC<CreateLandProps> = ({
               />
             ) : (
               <div className="text-center">
-                <Upload className="mx-auto text-green-600 mb-2" />
-                <p className="text-sm text-gray-600">Upload Image</p>
+                <Upload className="mx-auto text-orange-600 mb-2" />
+                <p className="text-sm text-gray-600">Upload Farm Image</p>
               </div>
             )}
           </div>
@@ -196,7 +196,7 @@ const CreateLand: React.FC<CreateLandProps> = ({
           {uploadProgress > 0 && (
             <div className="w-full bg-gray-200 rounded-full h-2.5">
               <div 
-                className="bg-green-600 h-2.5 rounded-full" 
+                className="bg-orange-600 h-2.5 rounded-full" 
                 style={{ width: `${uploadProgress}%` }}
               ></div>
             </div>
@@ -247,7 +247,7 @@ const CreateLand: React.FC<CreateLandProps> = ({
         <div className="grid md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Address (Optional)
+              Land Full Address
             </label>
             <input 
               type="text"
@@ -259,7 +259,7 @@ const CreateLand: React.FC<CreateLandProps> = ({
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Ward (Optional)
+              Ward 
             </label>
             <input 
               type="text"
@@ -271,7 +271,7 @@ const CreateLand: React.FC<CreateLandProps> = ({
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              LGA (Optional)
+              Local Govenrment
             </label>
             <input 
               type="text"
@@ -287,7 +287,7 @@ const CreateLand: React.FC<CreateLandProps> = ({
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Latitude (Optional)
+              Latitude  
             </label>
             <input 
               type="number"
@@ -300,7 +300,7 @@ const CreateLand: React.FC<CreateLandProps> = ({
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Longitude (Optional)
+              Longitude  
             </label>
             <input 
               type="number"
@@ -390,9 +390,9 @@ const CreateLand: React.FC<CreateLandProps> = ({
           </button>
           <button 
             type="submit"
-            className="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+            className="w-full py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition"
           >
-            Add Land
+            Save Data
           </button>
         </div>
       </form>

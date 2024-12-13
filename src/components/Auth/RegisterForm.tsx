@@ -318,7 +318,7 @@ const RegisterForm: React.FC = () => {
         {step === 2 && (
           <div>
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-              Additional Information
+              Personal Details About You
             </h2>
 
             <div className="mb-4">
@@ -371,7 +371,7 @@ const RegisterForm: React.FC = () => {
 
             <div className="mb-4">
               <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
-                Address (Optional)
+                Address  
               </label>
               <input
                 id="address"
@@ -385,7 +385,7 @@ const RegisterForm: React.FC = () => {
 
             <div className="mb-4">
               <label htmlFor="ward" className="block text-sm font-medium text-gray-700 mb-1">
-                Ward (Optional)
+                Ward 
               </label>
               <input
                 id="ward"
@@ -399,7 +399,7 @@ const RegisterForm: React.FC = () => {
 
             <div className="mb-4">
               <label htmlFor="lga" className="block text-sm font-medium text-gray-700 mb-1">
-                Local Government Area (Optional)
+                LGA
               </label>
               <input
                 id="lga"

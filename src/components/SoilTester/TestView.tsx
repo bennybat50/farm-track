@@ -9,29 +9,56 @@ const TestView = () => {
   const base_url = baseUrl();
 
   const [farmerData, setFarmerData] = useState(null);
+  const [resultData, setResultData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchFarmerData = async () => {
-      try {
-        const storedUser = localStorage.getItem('authToken');
-        const response = await axios.get(`${base_url}/farmer/test-request/${id}`,  {
-          headers: {
-            "Authorization": `Bearer ${storedUser}`,
-          },
-        });
-        setFarmerData(response.data.data);
-      } catch (err) {
-        console.error("Error fetching farmer data:", err.response || err);
-        setError("Failed to fetch farmer data.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
+   
     fetchFarmerData();
+    fetchResultData()
   }, [id]);
+
+  const fetchFarmerData = async () => {
+    try {
+      const storedUser = localStorage.getItem('authToken');
+      const response = await axios.get(`${base_url}/farmer/test-request/${id}`,  {
+        headers: {
+          "Authorization": `Bearer ${storedUser}`,
+        },
+      });
+      setFarmerData(response.data.data);
+    } catch (err) {
+      console.error("Error fetching farmer data:", err.response || err);
+      setError("Failed to fetch farmer data.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+  const fetchResultData = async () => {
+    try {
+      const storedUser = localStorage.getItem('authToken');
+      console.log(`${base_url}/farmer/test-request/${id}/result`);
+
+      
+      const response = await axios.get(`${base_url}/farmer/test-request/${id}/result`,  {
+        headers: {
+          "Authorization": `Bearer ${storedUser}`,
+        },
+      });
+      console.log(response.data);
+      
+      setResultData(response.data.data);
+    } catch (err) {
+      console.error("Error fetching farmer data:", err.response || err);
+     // setError("Failed to fetch farmer data.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
   if (loading) {
     return <p>Loading...</p>;
@@ -61,8 +88,8 @@ const TestView = () => {
           </div>
           <div>
             <p><strong>Coordinates:</strong></p>
-            <p>Latitude: {farmerData?.land?.location?.coordinates?.latitude}°</p>
-            <p>Longitude: {farmerData?.land?.location?.coordinates?.longitude}°</p>
+            <p>Latitude: {farmerData?.land?.location?.coordinates?.latitude}° Longitude: {farmerData?.land?.location?.coordinates?.longitude}°</p> 
+            <p>Latitude: {farmerData?.land?.location?.coordinates?.latitude}° Longitude: {farmerData?.land?.location?.coordinates?.longitude}°</p> 
           </div>
           <div>
             <p><strong>Additional note:</strong></p>
@@ -73,12 +100,13 @@ const TestView = () => {
         {/* Nutrient & Crop Analysis Section */}
         <div className="mt-8 flex space-x-8">
           {/* Nutrients Section */}
-          <div className="flex-1 space-y-4">
+
+          {resultData==null?          <div className="flex-1 space-y-4">
             <h3 className="text-lg font-semibold">Nutrient Levels</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-              <label>Nitrogen <br /><b>4.6 mg/kg</b></label>
-              <label>Potassium <br /><b>6.4</b></label>
-              <label>Iron <br /><b>3.4</b></label>
+              <label>Nitrogen <br /><b>9.9</b></label>
+              <label>Potassium <br /><b>21.4</b></label>
+              <label>Iron <br /><b>23.4</b></label>
               <label>Manganese <br /><b>0.5</b></label>
               <label>Boron <br /><b>0.05</b></label>
               <label>Copper <br /><b>2.8</b></label>
@@ -89,7 +117,23 @@ const TestView = () => {
               <label>Texture <br /><b>89.4</b></label>
               <label>Source <br /><b>34.6</b></label>
             </div>
-          </div>
+          </div>:          <div className="flex-1 space-y-4">
+            <h3 className="text-lg font-semibold">Nutrient Levels</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              <label>Nitrogen <br /><b>{resultData.nutrients.nitrogen.level}</b></label>
+              <label>Potassium <br /><b>{resultData.nutrients.phosphorus.level}</b></label>
+              <label>Iron <br /><b>{resultData.nutrients.potassium.level}</b></label>
+              <label>Manganese <br /><b>0.5</b></label>
+              <label>Boron <br /><b>0.05</b></label>
+              <label>Copper <br /><b>2.8</b></label>
+              <label>Zinc <br /><b>4.5</b></label>
+              <label>CEC <br /><b>2.2</b></label>
+              <label>Organic Matter <br /><b>9.2</b></label>
+              <label>C/N <br /><b>45.5</b></label>
+              <label>Texture <br /><b>89.4</b></label>
+              <label>Source <br /><b>34.6</b></label>
+            </div>
+          </div>}
 
           {/* Crop Analysis Section */}
           <div className="flex-1 space-y-4">
